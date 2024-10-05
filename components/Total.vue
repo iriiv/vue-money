@@ -266,12 +266,12 @@ const data = [
 </script>
 
 <template>
-	<div>
+	<div class='min-h-[300px]'>
 		<LineChart class="h-full" :data="data" index="year" :categories="['Export Growth Rate', 'Import Growth Rate']"
 			:y-formatter="(tick, i) => {
 				return typeof tick === 'number'
 					? `$ ${new Intl.NumberFormat('us').format(tick).toString()}`
 					: '';
-			}" />
+			}" :show-tooltip="false" :show-grid-line="false" :show-legend="false" :show-x-axis="false" />
 	</div>
 </template>
